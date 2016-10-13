@@ -10,15 +10,13 @@ env:
   - QT_BASE=54
 
 before_install:
-  - if [ "$QT_BASE" = "54" ]; then sudo add-apt-repository ppa:beineri/opt-qt542-trusty -y; fi
+  - sudo add-apt-repository ppa:beineri/opt-qt541 -y
   - sudo apt-get update -qq
-
 install:
-  - if [ "$QT_BASE" = "54" ]; then sudo apt-get install -qq qt54base; source /opt/qt54/bin/qt54-env.sh; fi
   - sudo apt-get install libqt5webkit5-dev
-  - sudo apt-get update -qq
-
+  - sudo apt-get install qt54base qt54websockets qt
 script:
+  - source /opt/qt54/bin/qt54-env.sh
   - qmake -r
   - make
   - make check

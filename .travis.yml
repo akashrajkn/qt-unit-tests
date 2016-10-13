@@ -15,6 +15,8 @@ before_install:
 
 install:
   - if [ "$QT_BASE" = "54" ]; then sudo apt-get install -qq qt54base; source /opt/qt54/bin/qt54-env.sh; fi
+  - sudo apt-get install libqt5webkit5-dev
+  - sudo apt-get update -qq
 
 script:
   - qmake -r

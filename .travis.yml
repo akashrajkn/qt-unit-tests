@@ -13,6 +13,9 @@ before_install:
   - sudo add-apt-repository ppa:beineri/opt-qt542-trusty -y
   - sudo apt-get update -qq
   - git clone https://github.com/jasp-stats/jasp-desktop.git
+  - wget http://download.qt-project.org/official_releases/qt/5.6/5.6.1/qt-opensource-linux-x64-5.6.1.run
+  - sudo chmod +x qt-opensource-linux-x64-5.6.1.run
+  - ./qt-opensource-linux-x64-5.6.1.run
 install:
   - sudo apt-get install libqt5widgets5 libqt5webkit5-dev libqt5svg5-dev
   - sudo apt-get install libboost-dev libboost-filesystem-dev libboost-system-dev
